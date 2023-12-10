@@ -1,0 +1,79 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <p class="h3 fw-bold text-danger">Add Contact</p>
+      <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam aut cum doloribus ea expedita explicabo fugiat fugit iure molestiae neque nobis pariatur provident quaerat quasi quod rem sint,
+        tempora.</p>
+    </div>
+  </div>
+</div>
+
+<!create contact form-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="mb-2">
+          <input class="form-control" placeholder="Enter Your Name" type="text"
+                 [(ngModel)]="user.name" id="name"name="name" required="true">
+        </div>
+       <!-- <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>-->
+
+
+        <div class="mb-2">
+          <input class="form-control" placeholder="Photo-Url" type="text"
+                 [(ngModel)]="user.photo" id="photo"name="photo" required="true">
+        </div>
+
+
+
+        <div class="mb-2">
+          <input class="form-control" placeholder="Enter Your Email" type="text"
+                 [(ngModel)]="user.email" id="email"name="email" required="true">
+        </div>
+
+
+
+        <div class="mb-2">
+          <input class="form-control" placeholder="Enter Your Mobile" type="text"
+                 [(ngModel)]="user.mobile" id="mobile"name="mobile" required="true">
+        </div>
+
+
+
+        <div class="mb-2">
+          <input class="form-control" placeholder="Enter Your Company" type="text"
+                 [(ngModel)]="user.company" id="company"name="company" required="true">
+        </div>
+
+
+        <div class="mb-2">
+          <input class="form-control" placeholder="Enter Your Title" type="text"
+                 [(ngModel)]="user.title" id="title" name="title" required="true">
+        </div>
+
+
+
+
+        <div class="mb-2">
+
+          <input class="form-control" placeholder="Enter Your Group" type="text"
+                 [(ngModel)]="user.group" id="group" name="group" required ="true">
+          <!--
+          <select class="form-control">
+            <option value="">Select a Group</option>
+          </select>
+          -->
+
+        </div>
+        <div class="mb-2">
+         <input class="btn btn-danger btn btn-info" value="Create" type="submit" [disabled]="!userForm.form.valid" >
+          <a class="btn btn-dark ms-2" routerLink="/">Close</a>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-4">
+      <img [src]="user.photo" class="contact-img">
+    </div>
+  </div>
+</div>
